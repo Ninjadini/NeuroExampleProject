@@ -14,6 +14,10 @@ public class CraftClickerLogic : MonoBehaviour
 
     void Start()
     {
+#if UNITY_EDITOR
+// Neuro might not know you have just imported this demo as a unity package.
+        Ninjadini.Neuro.Editor.NeuroEditorDataProvider.Shared.Reload();
+#endif
         _saves = GetComponent<LocalNeuroContinuousSave>();
         
         //optional...
